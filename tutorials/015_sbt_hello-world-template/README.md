@@ -7,7 +7,7 @@ It provides an automated process to generate JAR files without having to manuall
 ## Usage
 
 Provided in this directory is a sample hello world SBT project structure for compiling Scala files into JAR files. This example is based off - 
-[SBT Hello World] (https://docs.scala-lang.org/getting-started-sbt-track/getting-started-with-scala-and-sbt-on-the-command-line.html)
+SBT Hello World (https://docs.scala-lang.org/getting-started-sbt-track/getting-started-with-scala-and-sbt-on-the-command-line.html)
 
 ### Folder Structure
 The folder structure is like below -
