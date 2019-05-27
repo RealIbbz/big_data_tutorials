@@ -96,6 +96,19 @@ RUN curl -sL --retry 3 \
 
 CMD ["bin/spark-class", "org.apache.spark.deploy.master.Master"]
 
+#ALMOND KERNEL
+ENV ALMOND_VERSION=0.5.0
+RUN \
+  curl -Lo coursier https://git.io/coursier-cli && \
+  chmod +x coursier && \
+  ./coursier bootstrap \
+    -r jitpack \
+    -i user -I user:sh.almond:scala-kernel-api_$SCALA_VERSION:$ALMOND_VERSION \
+    sh.almond:scala-kernel_$SCALA_VERSION:$ALMOND_VERSION \
+    -o almond && \
+  ./almond --install && \
+  rm -f almond
+
 # update PATH in .bashrc
 RUN echo "export PATH=$PATH" >> /root/.bashrc
 
